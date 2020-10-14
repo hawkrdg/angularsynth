@@ -1,7 +1,7 @@
 # An Angular Stereo Synth
 ## A Drop-In Component Using Web Audio
 
-![Stereo Synth](./src/assets/stereosynth.png)
+![Stereo Synth](./src/assets/synth.png)
 
 ## Setup
 
@@ -35,7 +35,7 @@ This is a drop-in stereo synth for angular/angular material. To use just copy th
 
 The synth contains three oscillatorNodes - synthOscillator is the source generator, amLfoOscillator can periodically control the source level, fmLfoOscillator can periodically control the source frequency. The source is connected to a gainNode and the gainNode is connected to the destination. The following diagram shows the node connections:
 
-![Routing](./synth/assets/synth-routing.png)
+![Routing](./src/assets/synth-routing.png)
 
 Each oscillator has a selection of waveshapes: sine, triangle, sawtooth, and square. The source frequency is controlled by an \<input\> with a range of 20hz to 20000hz. Both modulation LFO's have a 'percent' fader controlling how much of the gain/frequency is changed and a 'period' fader to control the frequency from 5hz to 0.1hz (ten seconds). Modulations can be toggled on/off. AM modulation will change the level from amPercent to the outputLevel and can go all the way from 0 to outputLevel. FM modulation will change the output frequency both plus and minus the percent * outputFrequency.
 
