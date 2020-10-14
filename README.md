@@ -1,7 +1,7 @@
 # An Angular Stereo Synth
 ## A Drop-In Component Using Web Audio
 
-![Stereo Synth](./synth/assets/stereosynth.png)
+![Stereo Synth](./src/assets/stereosynth.png)
 
 ## Setup
 
