@@ -24,20 +24,20 @@
 		  &lt;stereo-synth #synth1 [ctx]="myCtx" [dest]="myDest"&gt;&lt;/stereo-synth&gt;<br><br>
 
 			// inside app-component.ts or some service.ts<br>
-		    .<br>
-		    .<br>
-		    .<br>
+		    <span class="tab20"></span>.<br>
+		    <span class="tab20"></span>.<br>
+		    <span class="tab20"></span>.<br>
 		  export class AppComponent implements OnInit {{'{'}}<br>
-		    &nbsp;&nbsp;&nbsp; myCtx;<br>
-		    &nbsp;&nbsp;&nbsp; myDest;<br>
-		    &nbsp;&nbsp;&nbsp; @ViewChild('synth1') synth1: ElementRef;           // just in case you need to reference the DOM el...<br><br>
+		    <span class="tab20"></span>myCtx;<br>
+		    <span class="tab20"></span>myDest;<br>
+		    <span class="tab20"></span>@ViewChild('synth1') synth1: ElementRef;<span class="tab20"></span><span class="tab20"></span>// just in case you need to reference the DOM el...<br><br>
 
-		    &nbsp;&nbsp;&nbsp; constructor() {{'{}'}}<br><br>
+		    <span class="tab20"></span>constructor() {{'{}'}}<br><br>
 
-		    &nbsp;&nbsp;&nbsp; ngOnInit() {{'{'}}<br>
-		      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.myCtx = new (window as any).AudioContext();<br>
-		      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.myDest = this.myCtx.destination;            // or set to some splitter or panner for complex routing...<br>
-		    &nbsp;&nbsp;&nbsp; {{'}'}}
+		    <span class="tab20"></span>ngOnInit() {{'{'}}<br>
+		      <span class="tab40"></span>this.myCtx = new (window as any).AudioContext();<br>
+		      <span class="tab40"></span>this.myDest = this.myCtx.destination;<span class="tab20"></span><span class="tab20"></span>// or some splitter or panner...<br>
+		    <span class="tab20"></span>{{'}'}}
 		</p>
 
 		<h3>Concepts</h3>
