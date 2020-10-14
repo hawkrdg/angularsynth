@@ -1,0 +1,96 @@
+<div class="synthDiv mat-typography">
+
+	<div class="powerDiv">
+		Power <mat-slide-toggle #powerSwitch class="powerSwitch" color="primary" (click)="togglePower()" [(ngModel)]="synthPower"></mat-slide-toggle>
+	</div>
+
+	<div class="paramDiv">
+		<mat-form-field class="synthFrequency" floatLabel="'always'">
+			<!-- <mat-label>Frequency</mat-label> -->
+			<input matInput placeholder="Frequency"
+						type="number" min="20.0" max="20000.0" step="0.01"
+						[(ngModel)]="synthFrequency" (blur)="updateSynthFrequency()" (keyup.enter)="updateSynthFrequency()" />
+		</mat-form-field>
+		<mat-form-field class="synthWaveform" floatLabel="'always'">
+			<mat-select placeholder="Synth waveform..."
+						disableOptionCentering
+						[(ngModel)] = "synthWaveform"
+						(selectionChange) = "updateSynthWaveform()">
+				<mat-option *ngFor="let wave of waveforms"  [value]="wave">
+					{{wave}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+
+	<div class="levelDiv">
+		Level: <mat-slider class="synthLevel" color="primary" thumbLabel min="0" max="1" step="0.05" [(value)]="synthGain" (change)="updateSynthLevel()"></mat-slider>
+	</div>
+
+	<div class="modulationDiv">
+		<hr class="modulationDivider">
+		<p>Synth Modulation</p>
+
+		<div class="amDiv">
+			<div class="modulationAmplitudeDiv">
+				Amplitude <mat-slide-toggle class="powerSwitch" color="primary" (click)="toggleAmPower()"></mat-slide-toggle>
+			</div>
+
+			<div class="modulationWaveDiv">
+				<mat-form-field class="modulationWaveform" floatLabel="'always'">
+					<mat-select placeholder="Shape..."
+								disableOptionCentering
+								[(ngModel)] = "amWaveform"
+								(selectionChange) = "updateAmWaveform()">
+						<mat-option *ngFor="let wave of waveforms"  [value]="wave">
+							{{wave}}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+
+			<div class="modulationPercentDiv">
+				<p>Amount</p>
+				<p>{{amPercent}}%</p>
+				<mat-slider class="amPercent" color="primary" vertical thumbLabel min="0" max="100" step="1" [(value)]="amPercent" (change)="updateAmGain()"></mat-slider>
+			</div>
+
+			<div class="modulationPeriodDiv">
+				<p>Period</p>
+				<p>{{amPeriod}} seconds</p>
+				<mat-slider class="amPercent" color="primary" vertical thumbLabel min="0.2" max="10" step="0.1" [(value)]="amPeriod" (change)="updateAmPeriod()"></mat-slider>
+			</div>
+		</div>
+
+		<div class="fmDiv">
+			<div class="modulationAmplitudeDiv">
+				Frequency <mat-slide-toggle class="powerSwitch" color="primary" (click)="toggleFmPower()"></mat-slide-toggle>
+			</div>
+
+			<div class="modulationWaveDiv">
+				<mat-form-field class="modulationWaveform" floatLabel="'always'">
+					<mat-select placeholder="Shape..."
+								disableOptionCentering
+								[(ngModel)] = "fmWaveform"
+								(selectionChange) = "updateFmWaveform()">
+						<mat-option *ngFor="let wave of waveforms"  [value]="wave">
+							{{wave}}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+
+			<div class="modulationPercentDiv">
+				<p>Amount</p>
+				<p>{{fmPercent}}%</p>
+				<mat-slider class="fmPercent" color="primary" vertical thumbLabel min="0" max="100" step="1" [(value)]="fmPercent" (change)="updateFmGain()"></mat-slider>
+			</div>
+
+			<div class="modulationPeriodDiv">
+				<p>Period</p>
+				<p>{{fmPeriod}} seconds</p>
+				<mat-slider class="fmPercent" color="primary" vertical thumbLabel min="0.2" max="10" step="0.1" [(value)]="fmPeriod" (change)="updateFmPeriod()"></mat-slider>
+			</div>
+		</div>
+	</div>
+</div>
